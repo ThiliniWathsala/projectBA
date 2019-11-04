@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+<div class="section-title">
+<h2 class="top-header1">Project List</h2>
+</div>
+
+
+
+<table style="width: 83%; margin-left: 17%; table-layout: fixed; margin-top: 10px;">
+
+    <thead style="display: block;">
+        <tr class="table100-head" style="position: fixed; overflow-y: scroll; height: 60px; table-layout: fixed">
+            <th class="column1" scope="col" style="text-align: center">Project ID</th>
+            <th class="column2" scope="col" style="text-align: center">Name</th>
+            <th class="column3" scope="col" style="text-align: center">Status</th>
+            <th class="column4" scope="col" style="text-align: center">Info</th>
+            <th class="column5" scope="col" style="text-align: center">SRS</th>
+            <th class="column6" scope="col" style="text-align: center">Customer</th>
+            <th class="column7" scope="col" style="text-align: center">QA</th>
+            <th class="column8" scope="col" style="text-align: center">Grade</th>
+            <th class="column9" scope="col" style="text-align: center">End Project</th>
+        </tr>
+        <br><br>
+    </thead>
+    <tbody style="overflow-y: scroll; display: block; height: 470px; table-layout: fixed; margin-top: 10px">
+        <tr *ngFor="let project of projectlist">
+                <div *ngIf="check(project)"></div>
+            <th class="column1" scope="col" style="text-align: center">{{project.projectid}}</th>
+            <th class="column2" scope="col" style="text-align: center">{{project.name}}</th>
+            <th class="column3" scope="col" style="text-align: center">{{project.status}}</th>
+            <th class="column4" scope="col" style="text-align: center"><button value="{{project.projectid}}" (click)="view(project.projectid)"  class="btn-reply">View Info</button></th>
+            <th class="column5" scope="col" style="text-align: center"><button value="{{project.projectid}}" (click)="srs(project.projectid)" class="btn-reply">View SRS</button></th>
+            <th class="column6" scope="col" style="text-align: center"><button value="{{project.projectid}}" (click)="customer(project.projectid)" class="btn-reply" style="height: auto">Customer Details</button></th>
+            <th class="column7" scope="col" style="text-align: center"><button value="{{project.projectid}}" (click)="qa(project.projectid)" class="btn-reply">View QA</button></th>
+            <th class="column8" scope="col" style="text-align: center"><button value="{{project.projectid}}" (click)="grade(project.projectid)" [disabled]="admincheck || jba || gradestatus" class="btn-reply">Grade Now</button></th>
+            <th class="column9" scope="col" style="text-align: center"><button value="{{project.projectid}}" (click)="endProject(project.projectid)" [disabled]="admincheck || other || completed" class="btn-reply">End Project</button></th>
+    </tbody>
+</table>
+
+</div>

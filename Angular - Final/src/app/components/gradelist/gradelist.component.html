@@ -1,0 +1,44 @@
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title">
+    <h2 class="top-header1">Grade List</h2>
+    
+    
+    <!-- <h2 class="top-header1"><span><form action="">
+        <input type="search" name="search" placeholder="Search..">
+        <i class="fa fa-search"></i>
+      </form> </span></h2> -->
+    
+</div>
+
+    <br><br><br><br>
+    
+      
+<div></div>
+<table style="width: 83%; margin-left: 17%;">
+
+    <thead style="display: table">
+        <tr class="table100-head" style="position: fixed; overflow-y: scroll; height: 58px;">
+            <th scope="col" class="column1">Project ID</th>
+            <th scope="col" class="column2">Project Name</th>
+            <th scope="col" class="column3">Description</th>
+            <th scope="col" class="column4" style="text-align: center">Grade Project</th>
+        </tr>
+        <br><br>
+    </thead>
+    <tbody style="overflow-y: scroll; display: block; height: 480px; margin-top: 8px">
+        <tr *ngFor="let gradeproject of listtograde">
+            <td scope="col" class="column1">{{gradeproject.projectid}}</td>
+            <td scope="col" class="column2">{{gradeproject.name}}</td>
+            <td scope="col" class="column3">{{gradeproject.description}}</td>
+            <td scope="col" class="column4" style="text-align: center"><button value="{{gradeproject.projectid}}" (click)="grade(gradeproject.projectid)" [disabled]="admincheck" class="btn-reply">Grade Now</button></td>
+            </tr>
+    </tbody>
+    <br>
+</table>
+</div>

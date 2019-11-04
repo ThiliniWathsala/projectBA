@@ -1,0 +1,42 @@
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title">
+    <h2 class="top-header1">Reply list</h2>
+    
+    
+    
+</div>
+
+    <br><br><br>
+    <br>
+    
+      
+<div></div>
+
+<table style="width: 83%; margin-left: 17%;">
+   <tr>
+<th scope="col" style="width: 1200px">
+  <h4 style="margin-left: 10px">Answer :{{answerproject.content}}</h4>
+
+
+
+<button (click)="newReply()" [disabled]="admincheck" class="btn-reply float-right">New Reply</button>
+          </th>
+      </tr>
+        <tbody style="overflow: auto; display: block; height: 380px;">
+            <tr *ngFor="let reply of replylist">
+                <th scope="col" style="width: 1200px">
+                <h4>{{reply.content}}</h4>
+                <h5 style="margin-left: 30px; color: darkblue">Reply from: {{reply.employeeid}}</h5>
+                <h5 style="margin-left: 30px; color: darkblue">On: {{reply.date}} At: {{reply.time}}</h5>
+            </th>
+</table>
+<br><br>
+</div>

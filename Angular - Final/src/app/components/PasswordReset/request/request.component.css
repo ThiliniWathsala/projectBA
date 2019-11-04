@@ -1,0 +1,251 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+body {
+    background-color: rgb(231, 233, 240);
+    color: #fff;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1.4;
+    font-size: 0.6em;
+}
+
+.body {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    background-image: url(src/assets/images/office1.jpg);
+    background-size: cover;
+    
+    z-index: 0;
+}
+
+.grad {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+.company {
+    position: absolute;
+    top: calc(50% - 35px);
+    left: 10%;
+    z-index: 2;
+}
+
+.company div {
+    float: left;
+    font-family: 'Exo', sans-serif;
+}
+
+
+.main {
+    font-size: 50px;
+    color: rgb(15, 15, 15);
+    font-weight:500;
+}
+
+.text2 {
+    font-size: 24px;
+    color: #055573;
+    font-weight:570;
+
+}
+
+
+.company div span {
+    color: rgb(15, 15, 15) !important;
+    font-size: 30px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.login-form-container {
+    position: fixed;
+    top: 50%;
+    left: 75%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+    width: 400px;
+    border-radius: 5px;
+    background-color: rgba(37, 117, 146, 0.219);
+    overflow: hidden;
+}
+
+.denied .login-form-container {
+    -webkit-animation: shake 0.35s normal forwards ease-in-out;
+    animation: shake 0.35s normal forwards ease-in-out;
+}
+
+.login-form-container fieldset {
+    border: none;
+}
+
+.login-form-container header {
+    background-color: rgba(37, 117, 146, 0.603);
+    color: rgba(255, 255, 255, 0.945);
+    display: block;
+    padding: 1.5em;
+    font-family: 'Exo', sans-serif;
+    text-align: center;
+    font-size: 22px;
+    transition: all .5s;
+}
+
+.login-form-container header:hover {
+    color: #055673;
+
+}
+
+.login-form-container .input-wrapper {
+    position: relative;
+    display: block;
+    margin: 2em auto;
+    border-bottom: 1px solid rgb(253, 253, 252);
+    border-radius: 3px;
+    width: 300px;
+    padding-left: 20px;
+}
+
+
+
+.login-form-container .input-wrapper input {
+    width: 100%;
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+    padding: .6em .5em;
+    outline: 0;
+    
+}
+
+
+.login-form-container .input-wrapper input::-webkit-input-placeholder,
+.login-form-container .input-wrapper input::-moz-placeholder,
+.login-form-container .input-wrapper input:-ms-input-placeholder {
+    color: rgb(0, 0, 0);
+}
+
+.login-form-container .input-wrapper:before {
+    font-family: FontAwesome;
+    position: absolute;
+    display: inline-block;
+    top: 6px;
+    left: 8px;
+    font-size: 20px;
+    color: #055673;
+}
+
+.login-form-container .input-wrapper:nth-child(1):before {
+    content: "\f007";
+}
+
+.login-form-container .input-wrapper:nth-child(2):before {
+    content: "\f023";
+}
+
+.login-form-container button {
+    outline: 0;
+    font-family: 'Exo', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.1em;
+    background-color: #055673de;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 350px;
+    padding: 1em 0;
+    margin: 2em auto;
+    display: block;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.login-form-container button:hover {
+    background-color: #05567356;
+    opacity: 1;
+    color: #161718;
+}
+.login-form-container button:disabled:hover {
+    background-color: #05567356;
+    opacity: 1;
+    color: #161718;
+    cursor: default;
+}
+.login-form-container button:disabled{
+    background-color: #05567356;
+    opacity: 1;
+    color: #161718;
+}
+
+#logout {
+    font-size: 20px;
+    font-family: 'Exo', sans-serif;
+    color: #0a0a0abd;
+    font-weight: 480;
+    padding-top: 20px;
+    
+    text-align: center;
+}
+
+@-webkit-keyframes shake {
+    0% {
+        margin-left: 0;
+    }
+    12% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -10px;
+    }
+    50% {
+        margin-left: 10px;
+    }
+    75% {
+        margin-left: -10px;
+    }
+    87% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+@keyframes shake {
+    0% {
+        margin-left: 0;
+    }
+    12% {
+        margin-left: 0;
+    }
+    25% {
+        margin-left: -10px;
+    }
+    50% {
+        margin-left: 10px;
+    }
+    75% {
+        margin-left: -10px;
+    }
+    87% {
+        margin-left: 0;
+    }
+    100% {
+        margin-left: 0;
+    }
+}

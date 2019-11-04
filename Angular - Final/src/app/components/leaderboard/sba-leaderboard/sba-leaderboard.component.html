@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+
+
+<br><br>
+
+<div class="section-title">
+    <h2 class="top-header1">SBA Leaderboard</h2>
+   
+</div>
+
+    <br><br><br>
+    <br>
+ 
+<div></div>
+
+<table style="width: 83%; margin-left: 17%;">
+
+    <thead style="display: table">
+        <tr class="table100-head" style="position: fixed; height: 90px; overflow-y: scroll; ">
+             <th scope="col" class="column1">Rank</th>
+            <th scope="col" class="column2">Employee ID</th>
+            <th scope="col" class="column3">Employee Name</th>
+            <th scope="col" class="column4">Projects Completed </th>
+            <th scope="col" class="column5">Project<br>Manager<br>Grade</th>
+            <th scope="col" class="column6">QA<br>Grade</th>
+            <th scope="col" class="column7">Developer<br>Grade</th>
+            <th scope="col" class="column8">Overall<br>Grade</th>
+        </tr>
+        <br><br><br>
+    </thead>
+    <tbody style="overflow-y: scroll; display: block; height: 450px; margin-top: 17px">
+        <tr *ngFor="let sbarank of sbaleaderboard; let i = index">
+            <!-- <td>{{count()}}</td> -->
+            <td class="column1">{{i+1}}</td>
+            <td class="column2">{{sbarank.employeeid}}</td>
+            <td class="column3">{{sbarank.name}}</td>
+            <td class="column4">{{sbarank.projectcount}}</td>
+            <td class="column5">{{sbarank.pmgrade}}</td>
+            <td class="column6">{{sbarank.qagrade}}</td>
+            <td class="column7">{{sbarank.devgrade}}</td>
+            <td class="column8">{{sbarank.overall}}</td>
+
+        </tr>
+    </tbody>
+</table>

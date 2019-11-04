@@ -1,0 +1,230 @@
+
+@import url(https://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+.body {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    /* background-size: cover;
+    background-color: #DFDBD9; */
+}
+  
+  
+.body {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    
+    /* background-size: cover;
+    background-color: #c8def9; */
+}
+
+.top-header1 {
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    padding-right: 5px;
+    font-weight: 600;
+    color: #055573;
+    z-index: 1;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #b9b5b5;
+}
+.form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    width: 93%;
+    
+    margin: 40px auto;
+    border-radius: 10px;
+    border: 1.5px solid #055573;
+    
+    /* box-shadow: 0 4px 10px 4px rgba(37, 131, 204, 0.3); */
+  }
+.form .label {
+padding: 0.75em 5em;
+top: 5px;
+line-height: normal;
+border-radius: 0;
+border: none;
+background: none;
+display: block;
+color: #055573;
+padding-top: 0;
+padding-left: 0;
+letter-spacing: 0.025em;
+font-size: 1.125em;
+line-height: 1.25;
+position: relative;
+z-index: 100;
+}
+
+.disp-body {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: auto;
+    height: auto;
+    /* background-color: rgba(82, 82, 82, 0.774);
+    background-image: url(https://cdn.hipwallpaper.com/i/36/53/ew0vuJ.jpeg); */
+    background-size: cover;
+    background-repeat: repeat;
+    
+    z-index: -1;
+}
+
+
+.section-title {
+    
+    width: 1000px;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding-top: 6px;
+    margin-left: 17%;
+    margin-top: 7px;
+}
+
+
+/* .submit button[type=submit] {
+    width: 300px;
+    height: 40px;
+    background: rgb(218, 169, 65);
+    border: 1px solid rgb(218, 169, 65);
+    cursor: pointer;
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Exo', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 6px;
+    margin-top: 10px;
+    transition: all .3s;
+} */
+
+.section-1 {
+    position: relative;
+    z-index: -1;
+}
+
+
+#project-id {
+    font-size: 25px;
+    color: rgb(218, 169, 65);
+    font-family: 'Exo', sans-serif;
+}
+
+
+
+
+#Title-name {
+    color: rgb(255, 175, 78);
+}
+
+#attachment {
+    color: rgba(255, 175, 78, 0.719);
+}
+
+
+.SRS-options:hover {
+    opacity: 1.0;
+}
+
+#reject:hover {
+    opacity: 1.0;
+    background: #af400cd0;
+    border: #af320cda;
+}
+
+#approve:hover {
+    opacity: 1.0;
+    background: #0caf4ad0;
+    border: #08b825d0;
+}
+
+.list-item {
+    color: #8BD8BD;
+    opacity: 0.6;
+    font-size: 25px;
+    font-family: 'Exo', sans-serif;
+}
+
+.list-item:hover {
+    color: #055573;
+    opacity: 1.0;
+}
+
+.btn-section {
+    margin-left: 75%;
+    margin-top: -25%;
+}
+.btn-primary{
+
+    width: 160px;
+    height: 40px;
+    background: #055573;
+    border: 1px solid #055573;
+    cursor: pointer;
+    border-radius: 4px;
+    color: rgb(245, 240, 240);
+    font-family: "Titillium Web", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 6px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.btn-primary:disabled{
+
+   
+    background: #055573;
+    border: 1px solid #055573;
+    
+    
+    color: rgb(245, 240, 240);
+    opacity: 0.4;
+}
+
+.btn-primary:hover {
+    background: #0779a4;
+    color:rgb(226, 220, 220);;
+    border: 1px solid #055573;
+    /* background-color: #fff; */
+}
+
+table {
+    top: 100px;
+    border-spacing: 1;
+    border-collapse: collapse;
+    border-radius: 0px 0px 5px 5px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    content: "";
+    display: block;
+    position: absolute;
+    /* background-color: #bbb9b9; */
+    background-color: rgb(255, 255, 255);
+    padding: 0px 0px;
+  
+}

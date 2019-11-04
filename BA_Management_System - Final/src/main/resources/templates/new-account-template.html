@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>New Account Created for New User</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+
+    <!-- use the font -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+    <tr>
+        <td align="center" bgcolor="#0e6bb7">
+            <h1 align="center">Virtusa(Pvt) Ltd.</h1>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#eaeaea">
+            <p th:text="${'Dear ' + empname}" style="margin-top: 10px;margin-bottom: 30px"></p>
+            <p>Your account have been created. Please use the below password with your current email to access your account.</p>
+            <p>At the intial login with the new password you are required to change your password.</p>
+            <b><p th:text="${'New Password : ' + password}"></p></b>
+            <p style="margin-top: 30px">All the Best!</p>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#777777">
+            <p align="center" style="color: black"><b>WE ARE DELIGHTED TO HAVE YOU AS A PART OF OUR TEAM</b></p>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

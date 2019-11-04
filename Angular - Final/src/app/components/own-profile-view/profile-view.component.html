@@ -1,0 +1,187 @@
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+  <!--style="overflow-y: hidden"> -->
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br>
+
+
+<br><br><br>
+
+<!-- <div style="height: 500px; overflow-y: scroll"> -->
+
+    <div style="width: 83%; margin-left: 17%; height: 550px; overflow-y: scroll">
+
+            <!-- <div style="margin-left: 20px;"> -->
+                    <div style="text-align:center">
+                            <img src={{image}} style="border-radius: 50%; height: 200px; width: 200px">
+                            <br>
+                            <button (click)="change($event)" *ngIf="!changeImage" class="btn-submit" [disabled]="admincheck">Change Image</button>
+                            <form class="form" *ngIf="changeImage"> 
+                            <input style="margin-left: 50px;" name="image" (change)="selectFile($event)" type="file"  [(ngModel)]="userPro.image" *ngIf="changeImage" [disabled]="admincheck || false" class="form-control" placeholder="Maximum file size is 8MB">
+                            <!-- <span style="margin-top: -20px; margin-left: 250px">Maximum file size is 8MB</span>                           -->
+                            <button *ngIf="changeImage" [disabled]="!selectedFiles" (click)="upload()" class="btn-submit" style="margin-left: 20px">Save Image</button>
+                        <button *ngIf="changeImage" (click)="remain()" class="btn-submit" style="margin-left: 35px">Keep Existing</button>
+                      </form>  
+                      </div>
+                        <!-- <input style="margin-left: 280px" autocomplete="off" id="file-input" name="image" (change)="selectFile($event)" type="file" placeholder="Please copy the file path of yur image" [(ngModel)]="userPro.image" *ngIf="changeImage">
+                        <button *ngIf="changeImage" [disabled]="!selectedFiles" (click)="upload()" class="btn-submit" style="margin-left: 30px">Save Image</button>
+                        <button *ngIf="changeImage" (click)="remain()" class="btn-submit" style="margin-left: 35px">Keep Existing</button> -->
+                        <!-- </div> -->
+
+                        <form class="form">
+                                <div style="margin-left: 20px;">
+                                <h5 style="display:inline-block">Personal Details</h5>
+                                <button style="float:right" class="btn-submit" (click)="PersonDetailsEditButtonClick($event)" *ngIf="isPersonDetailsEditableDisabled" [disabled]="admincheck">Edit</button>
+                                    </div>
+
+                            <!-- <input  style="margin-left: 450px"  name="image" (change)="selectFile($event)" type="file"  [(ngModel)]="userPro.image" *ngIf="changeImage" [disabled]="isPersonDetailsEditableDisabled || admincheck" > -->
+
+                        
+                        
+                                <div style="margin-left: 20px;">
+                                        <label  class="label required" for="fname">First Name</label>
+                                        <input autocomplete="off" class="form-control" type="text"  name="fname" [(ngModel)]="userPro.fname" [disabled]="isPersonDetailsEditableDisabled || admincheck"
+                                             value="{{userPro.fname}}" > 
+                                  </div>      
+                            <div  style="margin-left: 20px;">
+                                    <label  class="label required" for="lname">Last Name</label>
+                                    <input autocomplete="off" [(ngModel)]="userPro.lname"  [disabled]="isPersonDetailsEditableDisabled || admincheck"
+                                        class="form-control" type="text" name="lname" value="{{userPro.lname}}">
+                              </div>
+                        
+                        
+                            <div  style="margin-left: 20px;">
+                                    <label class="label required" for="username">User Name</label>
+                                    <input autocomplete="off" [(ngModel)]="userPro.username" [disabled]="isPersonDetailsEditableDisabled || admincheck"
+                                        class="form-control" type="text" name="username" value="{{userPro.username}}">
+                              </div>
+                        
+                            <div style="margin-left: 20px;">
+                                    <label for="Position"  class="label required">Position</label>
+                                    <input [(ngModel)]="userPro.type" name="type" disabled=""
+                                        class="form-control" type="text" value="{{userPro.type}}">
+                              </div>
+                       
+                            <div  style="margin-left: 20px;">
+                                    <label for="About-me"  class="label required">About me</label>
+                                    <textarea autocomplete="off" [(ngModel)]="userPro.about" name="about" [disabled]="isPersonDetailsEditableDisabled || admincheck"
+                                        class="form-control" cols="30" rows="5" type="text" value="{{userPro.about}}">
+            
+                              </textarea>
+                              </div>
+                        <br>
+                            <div  style="margin-left: 20px;">
+                                    <button *ngIf="!isPersonDetailsEditableDisabled" class="btn-submit" [disabled]="admincheck"
+                                    (click)="remain()">Keep Existing</button>
+                                    <br>
+                                    <button style="float: right; margin-top: -40px" *ngIf="!isPersonDetailsEditableDisabled" class="btn-submit" [disabled]="admincheck"
+                                    (click)="changePersonalDetails($event)">Save changes</button>
+                                    <br>
+                              </div>
+                              
+                        
+                            <div  style="margin-left: 20px;">
+                                    <h5 style="display:inline-block">Contact Details</h5>
+            
+                                    <button style="float:right" class="btn-submit"
+                                        (click)="ContactDetailsEditableDisabled($event)"
+                                        *ngIf="isContactDetailsEditableDisabled" [disabled]="admincheck">Edit</button>
+                              </div>
+                        
+                            <div style="margin-left: 20px;">
+                                <label for="Contact"  class="label required">Contact Number</label>
+                                    <input autocomplete="off" [disabled]="isContactDetailsEditableDisabled || admincheck" class="form-control" type="text"
+                                        value="{{userPro.contact1}}" name="contact1" [(ngModel)]="userPro.contact1">
+                              </div>
+                        
+                            <div  style="margin-left: 20px;">
+                                    <label for="Address"  class="label required">Address</label>
+                              </div>
+                        
+                            <div style="margin-left: 100px;">
+                                    <label for="number"  class="label required"> Number</label>
+                                    <input autocomplete="off" [disabled]="isContactDetailsEditableDisabled || admincheck" class="form-control" type="text"
+                                        value="{{userPro.addressno}}" name="addressno" [(ngModel)]="userPro.addressno">
+                              </div>
+                      
+                            <div  style="margin-left: 100px;">
+                                    <label for="Street"  class="label required">Street</label>
+                                    <input autocomplete="off" [disabled]="isContactDetailsEditableDisabled || admincheck" class="form-control" type="text"
+                                        value="{{userPro.street}}" name="street" [(ngModel)]="userPro.street">
+                              </div>
+                      
+                            <div style="margin-left: 100px;">
+                                    <label for="City"  class="label required">City</label>
+                                    <input autocomplete="off" [disabled]="isContactDetailsEditableDisabled || admincheck" class="form-control" type="text"
+                                        value="{{userPro.city}}" name="city" [(ngModel)]="userPro.city">
+                              </div>
+                       
+                            <div  style="margin-left: 20px;">
+                                    <label for="email"  class="label required">Email</label>
+                                    <input autocomplete="off" [disabled]="isContactDetailsEditableDisabled || admincheck" class="form-control" type="text"
+                                        value="{{userPro.email}}" name="email" [(ngModel)]="userPro.email">
+                                        </div>
+                        <br>
+                            <div  style="margin-left: 20px;">
+                                    <button [disabled]="admincheck" *ngIf="!isContactDetailsEditableDisabled" class="btn-submit" (click)="remain()">Keep Existing</button>
+                                    <button style="float:right;" [disabled]="admincheck" *ngIf="!isContactDetailsEditableDisabled" class="btn-submit" (click)="changeContactDetails($event)">Save changes</button>
+                                    <br>
+                              </div>
+
+                               
+                       <br>
+                            <div style="margin-left: 20px;">
+                                    <h5 style="display:inline-block">Password</h5>
+                                    <button style="float:right" class="btn-submit" *ngIf="isloginDetailsEditableDisabled"
+                                        (click)="loginDetailsEdit($event)" [disabled]="admincheck || admin">Change Password</button>
+                              </div>
+                        
+                            <div style="margin-left: 20px;" *ngIf="!isloginDetailsEditableDisabled">
+                                    <label for="newPassword"  class="label required" >New Password</label>
+                                    <input [(ngModel)]="modelPro.newPassword" name="newPassword" class="form-control" type="password" [disabled]="admincheck">
+                                    <password-strength-meter [password]="modelPro.newPassword" style="border-color: white;" class="form-control" [enableFeedback]="true" (strengthChange)="onPasswordStrengthChanged($event)"></password-strength-meter>
+                <!-- <small id="passwordHelpBlock" class="form-text text-muted">
+                  Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters,
+                  or emoji.
+                </small> -->
+                              </div>
+                        
+                            <!-- <div style="margin-left: 20px;">
+                                    <p style="color: red; font-size: smaller" *ngIf="!errormsgEnable2 ; else clearmsg2">
+                                            {{ errormsg2 }}</p>
+                                        <ng-template #clearmsg2>
+                                            <p></p>
+                                        </ng-template>
+                              </div> -->
+                        
+                            <div style="margin-left: 20px;" *ngIf="!isloginDetailsEditableDisabled">
+                                    <label for="confirmPassword"  class="label required">Confirm password</label>
+                                    <input [(ngModel)]="modelPro.rePassword" name="rePassword" class="form-control" type="password" [disabled]="admincheck">
+                              </div>
+                        
+                                <div style="margin-left: 20px;">
+                                        <p style="color: red; font-size: smaller " *ngIf="!errormsgEnable3; else clearmsg3 ">
+                                                {{ errormsg3 }}</p>
+                                            <ng-template #clearmsg3>
+                                                <p></p>
+                                            </ng-template>
+                                  </div>
+                            <br>
+                                    <div style="margin-left: 20px;">
+                                            <button *ngIf="!isloginDetailsEditableDisabled"
+                                            class="btn-submit" [disabled]="admincheck" (click)="remain()">Keep Existing</button>
+                                            <button style="float:right;" *ngIf="!isloginDetailsEditableDisabled"
+                                            class="btn-submit" (click)="checkPassword()" [disabled]="admincheck">Save Password</button>
+                                      </div>
+                                
+                                
+                                      </form>
+                                
+
+
+
+    </div>
+
+</div>

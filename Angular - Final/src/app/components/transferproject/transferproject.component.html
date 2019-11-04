@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title">
+    <h2 class="top-header1">Transfer Project</h2>
+    
+    
+    
+</div>
+
+    <br><br><br>
+    <br>
+    
+      
+<div></div>
+
+<table style="width: 83%; margin-left: 17%; table-layout: fixed">
+    <thead style="display: table">
+        <tr class="table100-head" style="position: fixed; height: 80px; overflow-y: scroll; table-layout: fixed">
+            <th scope="col" class="column1">Project ID</th>
+            <th scope="col" class="column2" style="text-align: center">Name</th>
+            <th scope="col" class="column3">Status</th>
+            <th scope="col" class="column4">New PM Email</th>
+            <th scope="col" class="column5">Transfer Project</th>
+        </tr>
+        <br><br>
+    </thead>
+    <tbody style="overflow-y: scroll; display: block; height: 455px; margin-top: 25px; table-layout: fixed">
+        <tr *ngFor="let project of projectlist">
+            <th scope="col" class="column1">{{project.projectid}}</th>
+            <th scope="col" class="column2" style="text-align: center">{{project.name}}</th>
+            <th scope="col" class="column3">{{project.status}}</th>
+            <!-- <form #check="ngForm"> -->
+            <th scope="col" class="column4"><input type="email" class="form-control" name="username"  [(ngModel)]="project.username" placeholder="Email of the New PM"></th>
+            <th scope="col" class="column5"><button (click)="submit(project)"  class="btn-reply">Transfer Project</button></th>
+        <!-- </form> -->
+    </tbody>
+</table>
+</div>

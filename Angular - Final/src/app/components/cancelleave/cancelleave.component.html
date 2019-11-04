@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<div class="disp-body"></div>
+
+<app-navbar ng-model="navbar" style="position: fixed; width: 101%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title">
+<h2 class="top-header1">Cancel Leave</h2>
+<br>
+
+<h2 class="top-header1"><span></span></h2>
+<br>
+</div>
+
+<br><br><br>
+<br>
+
+<div></div>
+<div class="mt-4 col-8 offset-2">
+    <div class="form" style="margin-left: 13%; margin-top: 50px; width: 100%;">
+        <!-- <div class="card-header">Edit Customer Details</div> -->
+        <div>
+            <form class="form-group" autocomplete="off" novalidate #createProject1="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group row">
+                    <label for="inputEmail3"class="col-sm-3">Employee Name</label>
+                    <div class="col-sm-9">
+                            <input type="text" disabled value="{{empname}}" class="form-control">        
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-sm-3">Select Day</label>
+                    <div class="col-sm-9">
+                            <select class="form-control"  [disabled]="admincheck" [(ngModel)]="day.leaveid" name="leaveid"
+                    #banalyst1="ngModel" required>
+
+                    <option *ngFor="let calender of dayslist" [value]="calender.leaveid">
+                        {{calender.date}}
+                    </option>
+                </select>
+                </div>
+                </div>
+                <br>
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-2">
+                            <button type="submit" class="btn-reply float-right" [disabled]="!createProject1.valid || admincheck">Cancel Leave</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,104 @@
+
+<div class="disp-body"></div>
+
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title">
+<h2 class="top-header1">Grade BA</h2>
+<br>
+
+<h2 class="top-header1"><span></span></h2>
+<br>
+</div>
+
+<br><br><br>
+<br>
+
+
+
+<div></div>
+<table style="width: 83%; margin-left: 17%;">
+
+<div class="form">
+
+
+<div class="tab-content">
+<div id="signup">   
+
+
+            <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+
+                <!-- <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label"><h5>Question</h5></label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" value="{{currentquestion.content}}" disabled>
+                    </div>
+                </div> -->
+                <div class="form-group row" *ngIf="pm" style="margin-top: 20px; margin-left: 40px">
+                    <label  class="col-form-label" for="fname">PM Grade (Lead BA : {{currentproject.lba}} ) <b>[Max Value = 5]</b></label>
+                    <input class="form-control" autocomplete="off" [disabled]="admincheck" type="number" step="0.01" min="0" max="5" name="pmgrade" onkeyup="if(this.value > 5) this.value = 5;" [(ngModel)]="projectgrade.pmgrade" required>
+                    <br>
+                  </div>
+
+                <div class="form-group row" *ngIf="sba" style="margin-top: 20px; margin-left: 40px">
+                  <label class="col-form-label" for="fname">Lead BA Grade (Junior BA : {{currentproject.jba1}}) <b>[Max Value = 5]</b></label>
+                  <input class="form-control" autocomplete="off" [disabled]="admincheck" type="number" step="0.01" min="0" max="5" name="sbagrade1" onkeyup="if(this.value > 5) this.value = 5;" [(ngModel)]="projectgrade.sbagrade1" required>
+                  <br>
+              </div>
+
+              <div class="form-group row" *ngIf="sba" style="margin-top: 20px; margin-left: 40px">
+                <label  class="col-form-label" for="fname">Lead BA Grade (Junior BA : {{currentproject.jba2}}) <b>[Max Value = 5]</b></label>
+                <input class="form-control" autocomplete="off" [disabled]="admincheck" type="number" step="0.01" min="0" max="5" name="sbagrade2" onkeyup="if(this.value > 5) this.value = 5;" [(ngModel)]="projectgrade.sbagrade2" required>
+                <br>
+              </div>
+
+              <div class="form-group row" *ngIf="dev1" style="margin-top: 20px; margin-left: 40px">
+                <label class="col-form-label" for="fname">Developer Grade (Lead BA : {{currentproject.lba}}) <b>[Max Value = 5]</b></label>
+                <input class="form-control" autocomplete="off" [disabled]="admincheck" type="number" step="0.01" min="0" max="5" name="dev1grade" onkeyup="if(this.value > 5) this.value = 5;" [(ngModel)]="projectgrade.dev1grade" required>
+                <br>
+              </div>
+
+              <div class="form-group row" *ngIf="dev2" style="margin-top: 20px; margin-left: 40px"> 
+                <label  class="col-form-label" for="fname">Developer Grade (Lead BA : {{currentproject.lba}}) <b>[Max Value = 5]</b></label>
+                <input class="form-control" autocomplete="off" [disabled]="admincheck" type="number" step="0.01" min="0" max="5" name="dev2grade" onkeyup="if(this.value > 5) this.value = 5;" [(ngModel)]="projectgrade.dev2grade" required>
+                <br>
+              </div>
+
+              <div class="form-group row" *ngIf="dev3" style="margin-top: 20px; margin-left: 40px">
+                <label  class="col-form-label" for="fname">Developer Grade (Lead BA : {{currentproject.lba}}) <b>[Max Value = 5]</b></label>
+                <input class="form-control" autocomplete="off" [disabled]="admincheck" type="number" step="0.01" min="0" max="5" name="dev3grade" onkeyup="if(this.value > 5) this.value = 5;" [(ngModel)]="projectgrade.dev3grade" required>
+              `<br>
+              </div>
+
+              <div class="form-group row" *ngIf="dev4" style="margin-top: 20px; margin-left: 40px">
+                <label  class="col-form-label" for="fname">Developer Grade (Lead BA : {{currentproject.lba}}) <b>[Max Value = 5]</b></label>
+                <input class="form-control" autocomplete="off" [disabled]="admincheck" type="number" step="0.01" min="0" max="5" name="dev4grade" onkeyup="if(this.value > 5) this.value = 5;" [(ngModel)]="projectgrade.dev4grade" required>
+                <br>
+              </div>
+
+              <div class="form-group row" *ngIf="dev5" style="margin-top: 20px; margin-left: 40px">
+                <label class="col-form-label" for="fname">Developer Grade (Lead BA : {{currentproject.lba}}) <b>[Max Value = 5]</b></label>
+                <input class="form-control" autocomplete="off" [disabled]="admincheck" type="number" step="0.01" min="0" max="5" name="dev5grade" onkeyup="if(this.value > 5) this.value = 5;" [(ngModel)]="projectgrade.dev5grade" required>
+                <br>
+              </div>
+
+
+            <div class="form-group row" *ngIf="pm" style="margin-top: 20px; margin-left: 40px">
+              <label class="col-form-label" for="fname">Grade given by the Customer <b>[Max Value = 5]</b></label>
+              <input class="form-control" autocomplete="off" [disabled]="admincheck" type="number" step="0.01" min="0" max="5" name="customergrade1" onkeyup="if(this.value > 5) this.value = 5;" [(ngModel)]="projectgrade.customergrade1">
+              <br>
+            </div>
+
+                <div class="form-group row">
+                    <div >
+                        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid || admincheck" style="margin-left: 650px; width: 150px; height: 50px;">Submit Grading</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

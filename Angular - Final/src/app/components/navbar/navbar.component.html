@@ -1,0 +1,62 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 82%; margin-left: 18%">
+    <div style="text-align: center">
+    <div>
+        <a class="navbar-item" routerLink="../CreateProfile" *ngIf="admin"> Create User</a>
+        <a class="navbar-brand" routerLink="../CreateProfile" *ngIf="admin"> Manage User Account</a>
+        <a class="navbar-brand" routerLink="../CreateProfile" *ngIf="admin"> Change Admin Password</a>
+        <a class="navbar-brand" routerLink="../CreateProject" *ngIf="pm"> Create Project</a>
+        <a class="navbar-brand" routerLink="../Chat">Chat</a>
+        <a class="navbar-brand" routerLink="../LeaveSubmit" *ngIf="sba || jba">Leave Submit</a>
+        <a class="navbar-brand" routerLink="../LeaveApproval" *ngIf="pm">Leave Approve</a> 
+        <a class="navbar-brand" routerLink="../ProjectList" *ngIf="!admin">Project List</a>
+        <a class="navbar-brand" routerLink="../ProjectList" *ngIf="!admin">Grade Employee</a>
+    </div>
+</div>
+</nav> -->
+
+<header class="header" role="banner">
+    <div class="menu-toggle" id="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="overlay"></div>
+    <div class="container">
+        <nav>
+            <h1 class="brand"><a href="index.html"><span></span></a></h1>
+            <ul>
+            <li>
+                <a  routerLink="../CreateProfile" *ngIf="admin" ><b> Create User</b></a>
+            </li>
+            <li>
+                <a  routerLink="../ResetBlockedAccount" *ngIf="admin"><b> Manage User Account</b></a>
+            </li>
+            <li>
+                <a  routerLink="../AdminChangePassword" *ngIf="admin" ><b>Change Admin Password</b></a>
+            </li>
+            <li>
+                <a  routerLink="../TransferProject" *ngIf="admin" ><b>Transfer Project</b></a>
+            </li>
+            <li>
+                <a  routerLink="../CreateProject" *ngIf="pm" ><b>Create Project</b></a>
+            </li>
+            <li>
+                <a  routerLink="../Chat" ><b>Chat</b></a>
+            </li>
+            <li>
+                <a  routerLink="../LeaveSubmit" *ngIf="sba || jba" ><b>Leave Submit</b></a>
+            </li>
+            <li>
+                <a  routerLink="../CancelLeave" *ngIf="sba || jba" ><b>Cancel Leave</b></a>
+            </li>
+            <li>
+                <a  routerLink="../LeaveApproval" *ngIf="pm" ><b>Leave Approve</b></a> 
+            </li>
+            <li>
+                <a  routerLink="../ProjectList" *ngIf="!admin" ><b>Project List</b></a>
+            </li>
+            <li>
+                <a  routerLink="../OngoingProjects" *ngIf="!admin" ><b>Attention Projects</b></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</header>

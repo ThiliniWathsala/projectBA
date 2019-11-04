@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title" style="height: 0px">
+    <h2 class="top-header1">Question List</h2>
+    
+    
+    <!-- <h2 class="top-header1"><span><form action="">
+        <input type="search" name="search" placeholder="Search..">
+        <i class="fa fa-search"></i>
+      </form> </span></h2> 
+     <br><br><br>
+    <h2 class="top-header">Question List</h2>
+    <br>
+    <section class="Question">
+        <h4 style="margin-left: 10px">Project :</h4>
+        <h3 style="margin-left: 10px">{{questionproject.projectid}}</h3>
+        {{questionproject.content}}
+    </section>
+    <br>
+
+    <table style="width: 83%; margin-left: 17%; margin-top: 10px">
+-->
+    
+</div>
+
+    <br><br><br><br>
+    
+      
+<div></div>
+<table style="width: 83%; margin-left: 17%; table-layout: fixed">
+<th>
+         <h4 style="margin-left: 10px">Project :{{questionproject.projectid}}</h4>
+         <button (click)="newQuestion()" [disabled]="admincheck || other" class="btn-reply" style="margin-left: 1000px; margin-top: -150px;  width: auto">Ask New Question</button>
+</th>
+            <thead style="display: table; table-layout: fixed">
+                <tr class="table100-head" style="position: fixed; overflow-y: scroll; height: 58px;">
+            <th scope="col" class="column1">Question</th>
+            <th scope="col" class="column2">View Answers</th>
+            <th scope="col" class="column3">Raise Attention</th>
+        </tr>
+        <br><br>
+    </thead>
+    <tbody style="overflow-y: scroll; display: block; height: 380px; margin-top: 5px; table-layout: fixed">
+        <tr *ngFor="let question of questionlist">
+            <th scope="col" class="column1">
+                <h4>{{question.content}}</h4>
+                <h5 style="margin-left: 30px; color: darkblue">Question from: {{question.employeeid}}</h5>
+                <h5 style="margin-left: 30px; color: darkblue">On: {{question.date}} At: {{question.time}}</h5>
+                <h5 style="margin-left: 30px; color: darkblue">No. of Attention: {{question.attention}}</h5>
+                <h5 style="margin-left: 30px; color: darkblue">Last Updated: {{question.lastupdate}}</h5>
+            </th>
+            <th scope="col" class="column2"><button class="btn-reply" (click)="showAnswers(question.questionid)" >Answers</button></th>
+            <th scope="col" class="column3"><button class="btn-reply" (click)="attentionNow(question.questionid)" [disabled]="admincheck || other" style="height: auto">Issue Not Yet Clarified</button></th>
+        </tbody>
+</table>
+
+<!-- <button (click)="newQuestion()" [disabled]="admincheck || other" class="btn-reply float-right">Ask New Question</button> -->
+</div>

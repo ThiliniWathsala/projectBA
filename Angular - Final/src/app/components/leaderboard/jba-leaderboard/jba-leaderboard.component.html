@@ -1,0 +1,47 @@
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title">
+    <h2 class="top-header1">JBA Leaderboard</h2>
+   
+</div>
+
+    <br><br><br>
+    <br>
+    
+      
+<div></div>
+<table style="width: 83%; margin-left: 17%;">
+
+    <thead style="display: table">
+        <tr class="table100-head" style="position: fixed; overflow-y: scroll; height: 80px;">
+             <th scope="col" class="column1">Rank</th>
+            <th scope="col" class="column2">Employee ID</th>
+            <th scope="col" class="column3">Employee Name</th>
+            <th scope="col" class="column4">Projects Completed </th>
+            <th scope="col" class="column5">Lead BA<br>Grade</th>
+            <th scope="col" class="column6">System<br>Grade</th>
+            <th scope="col" class="column7">Customer<br>Grade</th>
+            <th scope="col" class="column8">Overall<br>Grade</th>
+        </tr>
+        <br><br><br>
+    </thead>
+    <tbody style="overflow-y: scroll; display: block; height: 460px; margin-top: 7px">
+        <tr *ngFor="let jbarank of jbaleaderboard; let i = index">
+            <!-- <td>{{count()}}</td> -->
+            <td class="column1">{{i+1}}</td>
+            <td class="column2">{{jbarank.employeeid}}</td>
+            <td class="column3">{{jbarank.name}}</td>
+            <td class="column4">{{jbarank.projectcount}}</td>
+            <td class="column5">{{jbarank.lbagrade}}</td>
+            <td class="column6">{{jbarank.systemgrade}}</td>
+            <td class="column7">{{jbarank.customergrade}}</td>
+            <td class="column8">{{jbarank.overall}}</td>
+
+        </tr>
+    </tbody>
+</table>

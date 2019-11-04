@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 101%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title">
+<h2 class="top-header1">Answer List</h2>
+
+</div>
+
+<br><br><br>
+<br>
+
+<div></div>
+    
+
+<table style="width: 83%; margin-left: 17%;">
+ <tr>
+     <th scope="col" style="width: 1060px">
+     <h4 style="margin-left: 10px">Question : {{questionproject.content}}</h4>
+     
+<button (click)="newAnswer()" [disabled]="admincheck" class="btn-reply1 float-right">New Answer</button>
+
+          </th>
+      </tr>
+    <tbody style="overflow: auto; display: block; height: 420px;">
+        <tr *ngFor="let answer of answerlist">
+            <th scope="col" style="width: 1200px">
+                <h4>{{answer.content}}</h4>
+                <h5 style="margin-left: 30px; color: darkblue">Answer from: {{answer.employeeid}}</h5>
+                <h5 style="margin-left: 30px; color: darkblue">On: {{answer.date}} At: {{answer.time}}</h5>
+                <button class="btn-reply" (click)="reply(answer.answerid)">View Replies</button>
+            </th>
+            </tr>
+            </tbody>
+</table>
+<br><br>
+</div>

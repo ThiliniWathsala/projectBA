@@ -1,0 +1,44 @@
+<div class="disp-body">
+    </div>
+    <div class="body" style="overflow-y: hidden">
+
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<!-- <section style="width: 82%; margin-left: 18%; background-color: cornflowerblue; position:fixed; margin-top: 55px">
+    <h3 style="margin-left: 40%; margin-top: 12px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: wheat">Chat List</h3>
+    <br>
+</section>
+<br><br><br><br><br> -->
+
+<br><br>
+<div class="section-title" style="height: 0px">
+    <h2 class="top-header1">Chat</h2>
+    <br>
+    
+    
+    <br>
+</div>
+
+    <br><br><br>
+    <br>
+    
+<table style="width: 83%; margin-left: 17%;">
+
+    <thead style="display: table">
+        <tr class="table100-head" style="position: fixed;">
+            <th scope="col" class="column1">Employee ID</th>
+            <th scope="col" class="column2">Name</th>
+            <th scope="col" class="column3">Chat</th>
+        </tr>
+        <br><br>
+    </thead>
+    <tbody style="overflow-y: scroll; display: block; height: 490px; margin-top: 5px">
+        <tr *ngFor="let chatmessage of chattinglist">
+            <td scope="col" class="column1">{{chatmessage.empid}}</td>
+            <td scope="col" class="column2">{{chatmessage.empname}}</td>
+            <td scope="col" class="column3"><button (click)="onSubmit(chatmessage)" class="btn-reply">Chat Now</button></td>
+            </tr>
+        </tbody>
+</table>
+</div>

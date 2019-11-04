@@ -1,0 +1,91 @@
+
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- <div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+
+<br><br><br>
+    <h2 class="top-header">Employee List</h2>
+    <br>
+
+
+  <form (ngSubmit)="onSubmit()" class="search">
+        <div class="searchBox">
+            <input class="searchInput" type="text" autocomplete="on" name="fname" [(ngModel)]="model.fname" placeholder="Search Employees">
+            <button type="submit" class="searchButton">
+                        <i class="material-icons">
+                            Search
+                        </i>
+                    </button>
+        </div>
+    </form>
+    <br><br><br>
+
+<table style="width: 83%; margin-left: 17%;">
+
+    <thead style="display: table">
+        <tr class="table100-head" style="position: fixed;">
+            <th scope="col" class="column1">Employee ID</th>
+            <th scope="col" class="column2">Name</th>
+            <th scope="col" class="column3">Employee Type</th>
+            <th scope="col" class="column4">Profile</th>
+            <th scope="col" class="column5">Chat</th>
+        </tr>
+        <br><br><br>
+    </thead >
+    <tbody style="overflow: auto; display: block; height: 360px"> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title">
+    <h2 class="top-header1">Employee List</h2>
+    
+     <h2 class="top-header1"><form (ngSubmit)="onSubmit()">
+        <input type="search" autocomplete="off" name="fname" [(ngModel)]="model.fname" placeholder="Search..">
+        <i class="fa fa-search"></i>
+      </form> </h2>
+    
+</div>
+
+    <br><br><br>
+    <br>
+    <div>
+<!-- <form>
+    <input type="text" name="search" placeholder="Search..">
+  </form>
+  </div> -->
+
+<table style="width: 83%; margin-left: 17%;">
+
+    <thead style="display: table">
+        <tr class="table100-head" style="position: fixed; overflow-y: scroll; height: 58px;">
+            <th scope="col" class="column1">Employee ID</th>
+            <th scope="col" class="column2">Name</th>
+            <th scope="col" class="column3">Employee Type</th>
+            <th scope="col" class="column4">Profile</th>
+            <th scope="col" class="column5">Chat</th>
+        </tr>
+        <br><br>
+    </thead >
+    <tbody style="overflow: scroll; display: block; height: 450px; margin-top: 5px">
+  
+        <tr *ngFor="let emptype of employeelist">
+            <th scope="col" class="column1">{{emptype.employeeid}}</th>
+            <th scope="col" class="column2"><span>{{emptype.fname}} </span><span> {{emptype.lname}}</span></th>
+            <th scope="col" class="column3">{{emptype.type}}</th>
+            <th scope="col" class="column4"><button value="{{emptype.employeeid}}" (click)="viewProfile(emptype.employeeid)" class="btn-reply">View Profile</button></th>
+            <th scope="col" class="column5"><button value="{{emptype.employeeid}}" (click)="chatNow(emptype.employeeid)" class="btn-reply">Chat Now</button></th>
+            </tr>
+    </tbody>
+</table>
+</div>

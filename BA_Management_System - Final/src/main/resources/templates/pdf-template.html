@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Software Requirement Specification Customer Copy</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <!-- use the font -->
+    <style type="text/css">
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+    <tr>
+        <td align="center" bgcolor="#0e6bb7">
+            <h1 align="center">Virtusa(Pvt) Ltd.</h1>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#eaeaea">
+            <p style="margin-top: 30px">Dear Sir/Madam,</p>
+            <p style="margin-top: 30px">Please confirm that the above Software Requirement Specification is according to the specifications that were requested by you from our Business Analysts.</p>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#eaeaea">
+            <h3 align="center">Customer Details</h3>
+            <table class="table table-striped" align="center" width="80%">
+                <!--<col width="30%">-->
+                <!--<col width="70%">-->
+                <tr bgcolor="white">
+                    <td align="center">Customer Name</td>
+                    <td th:text="${customername}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Customer Contact</td>
+                    <td th:text="${customercontact}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Customer Email</td>
+                    <td th:text="${customeremail}" align="center"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#eaeaea">
+            <h3 align="center">Project Manager Details</h3>
+            <table class="table table-striped" align="center" width="80%">
+                <!--<col width="30%">-->
+                <!--<col width="70%">-->
+                <tr bgcolor="white">
+                    <td align="center">Project Manager Name</td>
+                    <td th:text="${pmname}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Project Manager Contact</td>
+                    <td th:text="${pmcontact}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Project Manager Email</td>
+                    <td th:text="${pmemail}" align="center"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#eaeaea">
+            <h3 align="center">Software Specifications</h3>
+            <table class="table table-striped" align="center" width="80%">
+                <!--<col width="30%">-->
+                <!--<col width="70%">-->
+                <tr bgcolor="white">
+                    <td align="center" >Project ID</td>
+                    <td th:text="${projectid}" align="center" ></td>
+                </tr>
+                <tr>
+                    <td align="center">Project Name</td>
+                    <td th:text="${projectname}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Project Start Date</td>
+                    <td th:text="${projectdate}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Project Purpose</td>
+                    <td th:text="${purpose}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Project Specification</td>
+                    <td th:text="${ispecification}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Document Organization and Reading Suggestions</td>
+                    <td th:text="${suggestion}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Intended Audience</td>
+                    <td th:text="${audience}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Project Benefits</td>
+                    <td th:text="${benefits}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Project Goals</td>
+                    <td th:text="${goal}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Project Objectives</td>
+                    <td th:text="${objectives}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Project References</td>
+                    <td th:text="${ireference}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Type of the Software System </td>
+                    <td th:text="${type}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Overall Description</td>
+                    <td th:text="${odescription}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Project Function Specifications</td>
+                    <td th:text="${ospecification}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">User Classes</td>
+                    <td th:text="${usercase}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Software Platform</td>
+                    <td th:text="${software}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Hardware Platform</td>
+                    <td th:text="${hardware}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Design Constraints</td>
+                    <td th:text="${constraints}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Documents</td>
+                    <td th:text="${documents}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Assumptions and Dependencies</td>
+                    <td th:text="${assumptions}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Display Interface</td>
+                    <td th:text="${display}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Hardware Interface Specification</td>
+                    <td th:text="${dspecifications}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Software Connections</td>
+                    <td th:text="${connections}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Communication Specifications and Network Protocols</td>
+                    <td th:text="${network}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Security and Data Encryption</td>
+                    <td th:text="${encryption}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Performance Requirements</td>
+                    <td th:text="${performance}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Possible Damages or any Safety Requirements</td>
+                    <td th:text="${damages}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Safety Actions</td>
+                    <td th:text="${safety}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Privacy concerned with data used</td>
+                    <td th:text="${security}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Software Quality Attributes</td>
+                    <td th:text="${attribute}" align="center"></td>
+                </tr>
+                <tr bgcolor="white">
+                    <td align="center">Attribute Description</td>
+                    <td th:text="${ndescription}" align="center"></td>
+                </tr>
+                <tr>
+                    <td align="center">Business Rules Reference</td>
+                    <td th:text="${nreference}" align="center"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#eaeaea">
+            <h3 align="center">System Features</h3>
+            <table class="table table-striped" align="center" width="80%">
+                <tr bgcolor="white">
+                    <td><b>Priority</b></td>
+                    <td><b>Description</b></td>
+                    <td><b>Requirement</b></td>
+                    <td><b>Response</b></td>
+                </tr>
+                <!--<th:block th:each="feature : ${features}">-->
+                <tr th:each="feature : ${features}">
+                    <td th:text="${feature.getPriority()}"></td>
+                    <td th:text="${feature.getDescription()}"></td>
+                    <td th:text="${feature.getRequirement()}"></td>
+                    <td th:text="${feature.getResponse()}"></td>
+                </tr>
+                <!--</th:block>-->
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#eaeaea">
+            <p style="margin-top: 30px">Please rate the service offered by our business analysts to you by sending us a number from below along with you confirmation.</p>
+            <p> 1 - Excellent</p>
+            <p> 2 - Good</p>
+            <p> 3 - Average</p>
+            <p> 4 - Poor</p>
+            <p> 5 - Very Poor</p>
+
+            <p style="margin-top: 50px">Thanks and Regards</p>
+            <p>Project Manager</p>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#777777">
+            <p align="center" style="color: black; margin-top: 25px"><b>THANK YOU FOR YOUR INTEREST IN US</b></p>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

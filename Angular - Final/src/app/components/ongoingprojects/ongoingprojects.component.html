@@ -1,0 +1,54 @@
+
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%;"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<br><br>
+
+<div class="section-title">
+<h2 class="top-header1">Projects Under Attention</h2>
+</div>
+
+<br><br><br>
+<br>
+
+
+<table style="width: 83%; margin-left: 17%;">
+        <thead style="display: table">
+                <tr class="table100-head" style="position: fixed;">
+            <th scope="col" class="column1">Project ID</th>
+            <th scope="col" class="column2">Project Name</th>
+            <th scope="col" class="column3">Description</th>
+            <th scope="col" class="column4">View SRS</th>
+        </tr>
+    </thead>
+    <br><br>
+    <tbody style="overflow-y: scroll; display: block; height: 475px; margin-top: 5px">
+        <tr *ngFor="let project of projectlist">
+                <div *ngIf="check(project)"></div>
+                <th *ngIf="!colour" scope="col" class="column1" >{{project.projectid}}</th>
+                <th *ngIf="!colour" scope="col" class="column2" >{{project.name}}</th>
+                <th *ngIf="!colour" scope="col" class="column3" >{{project.description}}</th>
+                <th *ngIf="!colour" scope="col" class="column4"><button value="{{project.projectid}}" (click)="srs(project.projectid)" [disabled]="admincheck" class="btn-reply">View SRS</button></th>
+                <th *ngIf="colour" scope="col" class="column1" style="color: red">{{project.projectid}}</th>
+                <th *ngIf="colour" scope="col" class="column2" style="color: red">{{project.name}}</th>
+                <th *ngIf="colour" scope="col" class="column3" style="color: red">{{project.description}}</th>
+                <th *ngIf="colour" scope="col" class="column4" ><button value="{{project.projectid}}" (click)="srs(project.projectid)" [disabled]="admincheck" class="btn-reply">View SRS</button></th>
+                <!-- <div *ngIf="check(project)"></div>
+                <div  *ngIf="colour" class="container" style="width: 100%">
+            <th scope="col" style="text-align: center; width: 25%; color: red">{{project.projectid}}</th>
+            <th scope="col" style="text-align: center; width: 25%; color: red">{{project.name}}</th>
+            <th scope="col" style="text-align: center; width: 25%; color: red">{{project.description}}</th>
+            <th scope="col" style="text-align: center; width: 25%;"><button value="{{project.projectid}}" (click)="srs(project.projectid)" [disabled]="admincheck" class="btn btn-primary">View SRS</button></th>
+        </div>
+        <div  *ngIf="!colour" class="container" style="width: 100%">
+                <th scope="col" style="text-align: center; width: 25%; color: black">{{project.projectid}}</th>
+                <th scope="col" style="text-align: center; width: 25%; color: black">{{project.name}}</th>
+                <th scope="col" style="text-align: center; width: 25%; color: black">{{project.description}}</th>
+                <th scope="col" style="text-align: center; width: 25%;"><button value="{{project.projectid}}" (click)="srs(project.projectid)" [disabled]="admincheck" class="btn btn-primary">View SRS</button></th>
+            </div> -->
+            </tr>
+    </tbody>
+</table>
+</div>

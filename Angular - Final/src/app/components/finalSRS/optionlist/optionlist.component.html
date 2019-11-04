@@ -1,0 +1,48 @@
+<div class="disp-body"></div>
+<div class="body" style="overflow-y: hidden">
+<app-navbar ng-model="navbar" style="position: fixed; width: 100%"> </app-navbar>
+<app-mainview ng-model="mainview"> </app-mainview>
+
+<!-- <section style="width: 82%; margin-left: 18%; background-color: cornflowerblue; position:fixed; margin-top: 55px">
+    <h3 style="margin-left: 40%; margin-top: 12px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: wheat">Grade Project</h3>
+    <br>
+</section>
+<br><br><br><br><br> -->
+
+<br><br>
+    <div class="section-title">
+<h2 class="top-header1">System Requirement Specification</h2>
+
+</div>
+
+    <br>
+        
+<table style="width: 83%; margin-left: 17%;">
+ 
+  <div class="form" >
+     
+          <form #loginForm=ngForm>
+          <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-3 col-form-label" style="font-size: 30px"><b>Project</b></label>
+              <div class="col-sm-9">
+                  <b><input type="text" class="form-control" value="{{name}}" disabled style="font-size: 30px;"></b>
+              </div>
+          </div>
+          <br>
+
+          <div style="margin-left: 50px">
+            <li class="list-item"><b><a (click)="introduction()"  routerLink="">Introduction</a></b></li><br>
+            <li class="list-item"><b><a (click)="overall()"  routerLink="">Overall</a></b></li><br>
+            <li class="list-item"><b><a (click)="display()"  routerLink="">Display Interface</a></b></li><br>
+            <li class="list-item"><b><a (click)="systemfeatures()" routerLink="">System Features</a></b></li><br>
+            <li class="list-item"><b><a (click)="nonfunctional()" routerLink="">Non-Functional Features</a></b></li>
+        </div>
+
+        <div style="margin-left: 600px; margin-top: -300px">
+            <button class="btn btn-primary" [disabled]="admincheck || status" *ngIf="sba" (click)="approve()">Approve SRS</button>
+            <button class="btn btn-primary"  [disabled]="admincheck || status" *ngIf="sba" (click)="reject()">Reject SRS</button>
+            <button class="btn btn-primary"  [disabled]="admincheck || status" *ngIf="pm" (click)="acknowledge()">Acknowledge</button>
+            <button class="btn btn-primary" [disabled]="admincheck || !status" *ngIf="pm" (click)="email()">Send SRS Manually</button>
+        </div>
+</form>
+</div>
